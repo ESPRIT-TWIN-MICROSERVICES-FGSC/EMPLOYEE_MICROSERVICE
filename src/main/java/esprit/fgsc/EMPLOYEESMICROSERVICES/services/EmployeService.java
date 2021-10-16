@@ -36,7 +36,6 @@ public Employee addEmployee(Employee employee) {
 	}
 	
 	public String deleteEmployee(String id) {   
-
 		employeRepository.deleteById(id);
     	return "client deleted";
 	}
@@ -51,12 +50,10 @@ public Employee updateEmployee(String id,Employee newEmployee) {
 		existingEmployee.setTel(newEmployee.getTel());
 		existingEmployee.setDesignation(newEmployee.getDesignation());
 		existingEmployee.setGender(newEmployee.getGender());
-		Date date = new Date();
-	    String join_date = sdf.format(date);
+		Date d = new Date(newEmployee.getJoinDate());
+	    String join_date = sdf.format(d);
 	    existingEmployee.setJoinDate(join_date);
-	    Date date1 = new Date();
-	    String birth_date = sdf.format(date1);
-	    existingEmployee.setBirthDate(birth_date);
+	    
 		return employeRepository.save(newEmployee);
 		
 	}else {
