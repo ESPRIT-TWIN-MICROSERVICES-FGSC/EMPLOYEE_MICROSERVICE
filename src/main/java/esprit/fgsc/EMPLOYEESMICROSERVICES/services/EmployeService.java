@@ -54,7 +54,7 @@ public Employee updateEmployee(String id,Employee newEmployee) {
 	    String join_date = sdf.format(d);
 	    existingEmployee.setJoinDate(join_date);
 	    
-		return employeRepository.save(newEmployee);
+		return employeRepository.save(existingEmployee);
 		
 	}else {
 		return null;
