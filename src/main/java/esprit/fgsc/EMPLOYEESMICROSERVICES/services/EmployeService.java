@@ -50,11 +50,11 @@ public Employee updateEmployee(String id,Employee newEmployee) {
 		existingEmployee.setTel(newEmployee.getTel());
 		existingEmployee.setDesignation(newEmployee.getDesignation());
 		existingEmployee.setGender(newEmployee.getGender());
-		Date d = new Date(newEmployee.getJoinDate());
-	    String join_date = sdf.format(d);
-	    existingEmployee.setJoinDate(join_date);
+	//	Date d = new Date(newEmployee.getJoinDate());
+	//    String join_date = sdf.format(d);
+	//    existingEmployee.setJoinDate(join_date);
 	    
-		return employeRepository.save(newEmployee);
+		return employeRepository.save(existingEmployee);
 		
 	}else {
 		return null;
