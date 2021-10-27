@@ -41,8 +41,8 @@ public class EmployeeController {
 	
 	@DeleteMapping("/delete/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public String deleteEmployee(@PathVariable String id) {
-	    return employeService.deleteEmployee(id);
+	public void deleteEmployee(@PathVariable String id) {
+	   
 	}
 
 	@PutMapping(value="/update/{id}")
@@ -53,7 +53,7 @@ public class EmployeeController {
 	
 @GetMapping("/employee/{id}")
 @ResponseStatus(HttpStatus.OK)
-public ResponseEntity<Client >getEmployeeById(@PathVariable("id") String id){
+public ResponseEntity<Employee >getEmployeeById(@PathVariable("id") String id){
 	 return new ResponseEntity<>(employeService.getEmployeeById(id),HttpStatus.OK);
 		}
 
