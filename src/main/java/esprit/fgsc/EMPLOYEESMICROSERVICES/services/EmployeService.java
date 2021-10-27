@@ -35,9 +35,9 @@ public Employee addEmployee(Employee employee) {
 		 return employeRepository.findAll();
 	}
 	
-	public String deleteEmployee(String id) {   
+	public void deleteEmployee(String id) {   
 		employeRepository.deleteById(id);
-    	return "client deleted";
+    
 	}
            
 public Employee updateEmployee(String id,Employee newEmployee) {
