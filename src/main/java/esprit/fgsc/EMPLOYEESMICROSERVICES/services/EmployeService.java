@@ -15,18 +15,11 @@ import esprit.fgsc.EMPLOYEESMICROSERVICES.repository.IEmployeRepository;
 
 @Service
 public class EmployeService {
-	private static final DateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
+	
 	@Autowired
 	private IEmployeRepository employeRepository;
 
 public Employee addEmployee(Employee employee) {
-	Date date = new Date();
-    String join_date = sdf.format(date);
-    employee.setJoinDate(join_date);
-    Date date1 = new Date();
-    String birth_date = sdf.format(date1);
-    employee.setBirthDate(birth_date);
-		
 		return employeRepository.save(employee);
 		
 	}
@@ -50,9 +43,8 @@ public Employee updateEmployee(String id,Employee newEmployee) {
 		existingEmployee.setTel(newEmployee.getTel());
 		existingEmployee.setDesignation(newEmployee.getDesignation());
 		existingEmployee.setGender(newEmployee.getGender());
-	//	Date d = new Date(newEmployee.getJoinDate());
-	//    String join_date = sdf.format(d);
-	//    existingEmployee.setJoinDate(join_date);
+		existingEmployee.setBirthDate(newEmployee.getBirthDate());
+		existingEmployee.setJoinDate(newEmployee.getJoinDate());
 	    
 		return employeRepository.save(existingEmployee);
 		
