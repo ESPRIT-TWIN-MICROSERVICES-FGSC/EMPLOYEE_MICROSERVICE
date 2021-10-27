@@ -52,7 +52,7 @@ public class EmployeeController {
 	}
 	@GetMapping("/employee/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public ResponseEntity<Client >getEmployeeById(@PathVariable("id") String id){
+	public ResponseEntity<Employee >getEmployeeById(@PathVariable("id") String id){
 	 return new ResponseEntity<>(employeService.getEmployeeById(id),HttpStatus.OK);
 		}
 	
