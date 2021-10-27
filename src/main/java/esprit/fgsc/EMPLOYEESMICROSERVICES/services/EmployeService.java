@@ -15,6 +15,7 @@ import esprit.fgsc.EMPLOYEESMICROSERVICES.repository.IEmployeRepository;
 
 @Service
 public class EmployeService {
+	
 	@Autowired
 	private IEmployeRepository employeRepository;
 

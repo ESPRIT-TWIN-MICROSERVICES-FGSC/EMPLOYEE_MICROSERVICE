@@ -50,6 +50,11 @@ public class EmployeeController {
 	public ResponseEntity<Employee> updateEmployee(@PathVariable("id") String id,@Valid @RequestBody Employee employee) {
 		return new ResponseEntity<>(employeService.updateEmployee(id, employee),HttpStatus.OK);
 	}
+	@GetMapping("/employee/{id}")
+	@ResponseStatus(HttpStatus.OK)
+	public ResponseEntity<Employee >getEmployeeById(@PathVariable("id") String id){
+	 return new ResponseEntity<>(employeService.getEmployeeById(id),HttpStatus.OK);
+		}
 	
 @GetMapping("/employee/{id}")
 @ResponseStatus(HttpStatus.OK)
