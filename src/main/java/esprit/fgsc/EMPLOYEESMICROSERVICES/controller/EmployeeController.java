@@ -42,7 +42,7 @@ public class EmployeeController {
 	@DeleteMapping("/delete/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public void deleteEmployee(@PathVariable String id) {
-	   
+		employeService.deleteEmployee(id);
 	}
 
 	@PutMapping(value="/update/{id}")
